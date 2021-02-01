@@ -1,0 +1,54 @@
+	public static void loadFromFile() {
+		Scanner fsc = null;
+
+		try {
+			Booking tempBooking;
+			fsc = new Scanner(new FileReader("BookingsData.txt"));
+
+			while (fsc.hasNext()) {
+				String rawLine = fsc.nextLine();
+				tempBooking = null;
+
+				String[] splitFields = rawLine.split(",");
+				String type = splitFields[0];
+
+				if (type.equals("HolidayBooking")) {
+					int numPassenger = Integer.parseInt(splitFields[6]);
+					double totalCost = Double.parseDouble(splitFields[7]);
+					double hotelPricePerNight = Double.parseDouble(splitFields[8]);
+					int numNights = Integer.parseInt(splitFields[9]);
+
+					try {
+						tempBooking = new HolidayBooking(splitFields[1],
+								splitFields[2].toUpperCase(), splitFields[4],
+								splitFields[5], numPassenger, totalCost, fr,
+								hotelPricePerNight, numNights, splitFields[10],
+								splitFields[11]);
+						bookings.add(tempBooking);
+						tempBooking.calculateBookingCost(fr);
+					} catch (BookingException e) {
+						System.out.println(e.getMessage());
+					}
+
+				} else if (type.equals("FlightBooking")) {
+					int numPassenger = Integer.parseInt(splitFields[6]);
+					double totalCost = Double.parseDouble(splitFields[7]);
+
+					try {
+						tempBooking = new FlightBooking(splitFields[1],
+								splitFields[2].toUpperCase(), splitFields[4],
+								splitFields[5], numPassenger, totalCost, fr);
+						bookings.add(tempBooking);
+						tempBooking.calculateBookingCost(fr);
+					} catch (BookingException e) {
+						System.out.println(e.getMessage());
+					}
+				}
+			}
+			fsc.close();
+
+		} catch (Exception e) {
+			System.out.println("No File Found that matches BookingsData.txt\n");
+		}
+
+	}

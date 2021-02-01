@@ -1,0 +1,542 @@
+@font-face {
+    font-family: ptsans;
+    src: url(../../fonts/PTSans-Regular.ttf);
+}
+@font-face{
+    font-family: Kalam;
+    src: url(../../fonts/Kalam-Regular.ttf);
+}
+
+@font-face{
+    font-family: reenie;
+    src: url(../../fonts/ReenieBeanie-Regular.ttf);
+}
+
+@font-face{
+    font-family: elite;
+    src: url(../../fonts/SpecialElite-Regular.ttf);
+}
+
+@font-face{
+    font-family: arimo;
+    src: url(../../fonts/Arimo-Regular.ttf);
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) { 
+
+}
+
+@media all and (max-width: 1024px) {
+
+ }
+/* Styling for iPhone/Android screen, other media to come in future updates */ 
+@media all and (max-width: 768px) { 
+.letter{
+    width: 63vw;
+    padding-right: 10px !important;
+    padding-left: 50px !important;
+}
+    .mainhead{
+        padding: 10px;
+        font-size: 28px !important;
+        height: 50%;
+    }
+    #ray{
+        width: 10vw;
+        height: 9vh;
+    }
+    #poppy{
+        visibility: hidden;
+
+    }
+
+    iframe{
+        padding:10px;
+        width:300px;
+        height:225px;
+    }
+    #map{
+        padding-left: 10px !important;
+    }
+
+    textarea{
+        width:85%;
+    }
+    input#submit  {
+        padding-left:70px !important;
+        padding-right:70px !important;
+    }
+    .nav{
+        max-height:120px;
+    }
+}
+ 
+
+@media all and (max-width: 480px) {
+    
+}
+
+@media screen and (orientation:portrait) { 
+
+}
+
+@media screen and (orientation:landscape) { 
+    
+
+ }
+
+
+
+
+/* With help from CSS navbar tutorial, W3 Schools https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black I personally would have styled each nav box without the list, but this so much more elegant */
+html {
+    scroll-behavior: smooth;
+  }
+
+  
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:darkolivegreen;
+    font-family: ptsans;
+    font-size: 1em;
+    border-radius: 5px;
+}
+  li  {
+    float: left;
+    
+      
+  }
+
+
+  #usrform {
+    float: left;
+    
+    margin-left: 30px;
+    
+    padding-top: 7px;
+    padding-bottom:7px;
+    padding-right: 10px;
+    padding-left:10px;
+    color:white;
+      
+  }
+  
+ li a, .dropbtn {
+    display: block;
+    padding: 8px 50px;
+    color:white;
+    text-align:center;
+    text-decoration: none;
+  }
+  /* W3 Schools tutorial taught me this dropdown styling */
+li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: darkolivegreen;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 15px;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: rgb(33,43,16);}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+.nav {
+    position:-webkit-sticky;
+    position: sticky;
+    top:0;
+    z-index: 9999;
+    
+    
+}
+
+
+
+
+.mainhead {
+    font-family: Kalam;
+    font-size: 65px;
+    margin-left:0px;
+    padding-left:20px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-right: 10px;
+    text-align: inline-block;
+    background-color: rgb(250, 250, 210, 0.55);
+    border-radius: 5px;
+    display:flex;
+}
+#anzac{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(33,43,16);
+    border-right: 0px solid #bbb;
+    border-left: 0px solid #bbb;
+    border-radius: 20px;
+
+}
+
+/* Thanks to https://www.transparenttextures.com/ */
+body {
+    background-color: lightgoldenrodyellow;
+background-image: url("../../media/black-felt.png");
+display:inline-block;
+   
+}
+
+
+
+p {
+    font-family: arimo;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+    display: inline-block;
+}
+p::first-letter{
+    font-size:23px;
+    color: brown;
+    
+  
+}
+
+h3 {
+    font-family: elite;
+    font-weight: bold;
+    font-size: 40px;
+    
+    
+}
+#dyn{
+    padding-left:15px;
+}
+#dynamic{
+    padding-top:15px;
+}
+#contacthead{
+    padding-left: 20px;
+}
+
+.letterlinksheading {
+    text-align: center;
+    font-family: elite;
+    text-decoration: underline;
+    padding-top: 50px;
+
+}
+#Welcome {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: initial;
+    background-color: whitesmoke;
+}
+
+
+.content {
+
+
+
+padding-top: 20px;
+padding-bottom: 20px;
+background-color: rgb(248, 230, 171,0.65);
+margin: 0 auto;
+max-width: 1024px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.letter {
+    font-family:reenie;
+    font-size:40px;
+    padding-bottom: 20px;
+    text-align: inline-block;
+    padding-left: 130px;
+    padding-right:130px;
+    margin-top: 1px black;
+    font-weight: lighter;
+    
+}
+
+.letter3d {
+    font-family:reenie;
+    font-size:40px;
+    padding-bottom: 20px;
+    text-align: inline-block;
+    
+    margin-top: 1px black;
+    font-weight: lighter;
+    
+}
+#info{
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+#places{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 20px;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+
+#intro {
+    font-family: elite;
+    font-size: 30px;
+    color: rgb(33,70,16);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    font-weight: bold;
+}
+#ray {
+    
+    box-shadow: 3px 3px rgb(46, 45, 45);
+    
+}
+#poppy {
+    position: right;
+    box-shadow: 3px 3px rgb(46, 45, 45);
+   
+}
+
+.parallax2 {
+    
+    background-image: url("../../media/10181.jpg");
+    margin-top: 100px; 
+    min-height: 200px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover; 
+    
+    
+   
+}
+
+
+footer {
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+
+.links {
+    padding-top:20px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+    max-width: 1024px;
+    font-size: 20px;
+}
+
+.sitelinks {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom:20px;
+    display:inline-block;
+    padding-right: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+    max-width: 1024px;
+    font-size: 20px;
+    
+}
+
+#cite{
+
+    font-size: 18px;
+}
+.links:link, .links:visited{
+    color:black;
+    
+    
+    text-decoration: none;
+}
+
+.links:hover{
+color: green;
+
+}
+.sitelinks:link, .sitelinks:visited{
+    color:black;
+    font-weight: bold;
+    
+    text-decoration: none;
+}
+
+.sitelinks:hover{
+color: green;
+
+}
+
+textarea {
+    margin-left: 9px;
+    padding-left: 10px;
+    padding-top:10px;
+}
+
+#map{
+    padding-left: 200px;
+    padding-bottom: 20px;
+}
+
+#sitemap{
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+ #contact {
+    display:grid;
+    margin-left:30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+  }
+  
+  #contact {
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 10fr);
+    grid-row-gap:0.5em;
+    
+  }
+  
+  input {
+      margin-left:10px;
+  }
+  
+
+ 
+  input#submit{
+      padding-left:130px;
+      padding-right:170px;
+      padding-top:10px;
+      padding-bottom:10px;
+      background-color: bisque;
+      font-family: elite;
+      font-weight: bold;
+      margin-bottom: 12px;
+
+  }
+  #rememberMe{
+   margin-left:138px;   
+      
+  }
+
+  .error {
+    color:brown;
+    padding-left:6px;
+    display: inline-block;
+    font-weight: bold;
+}
+  
+  
+  .errorStatus {
+    
+    color: rgb(33,43,16);
+      padding-left:11px;
+      font-size: 30px;
+      font-weight: bold;
+      padding-top: 40px;  
+  }
+  /*
+  #emailError{
+    color:brown;
+    padding-left:11px;
+    display: none;
+    }
+    #phoneError{
+    color:brown;
+    padding-left:11px;
+    display: none;
+    }
+    #subjectError{
+    color:brown;
+    padding-left:11px;
+    display: none;
+    }
+    #messageError{
+    color:brown;
+    padding-left:11px;
+    display: none;
+    }
+
+*/
+    
+    div.letter3D {
+        height: 1000px;
+        width: 960px;
+        
+        background-color: rgb(248, 230, 171,0.65);
+        box-sizing: border-box;
+        overflow: auto;
+        padding: 5px;
+        position: relative;
+        
+}
+    div.letter3D div {
+    border: 4px black groove;
+    height:calc(100% - 10px);
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  position: absolute;
+  transition: 4s;
+backface-visibility: hidden
+}
+div.letter3D div:nth-child(1) {
+    border-color: burlywood;
+    transform: rotateX(0deg);
+  }
+  div.letter3D div:nth-child(2) {
+    border-color: burlywood;
+    transform: rotateX(180deg);
+  }
+
+  div.letter3D:hover div:nth-child(1) {
+    transform: rotateX(180deg);
+  }
+  div.letter3D:hover div:nth-child(2) {
+    transform: rotateX(360deg);
+  }
+
+  #mailfront{
+
+    text-align: center;
+    padding-top:200px;
+  } 
+
+  #rememberlabel{
+    margin-top: 12px;  
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+  }
