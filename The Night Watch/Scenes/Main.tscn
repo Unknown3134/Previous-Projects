@@ -1,0 +1,233 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GFX/button_notPressed.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=14]
+[ext_resource path="res://SFX/322054__zimbot__engineroomsteady.ogg" type="AudioStream" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "AirlockWarning"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.713726, 0.0627451, 0.0627451, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Main" type="Control"]
+modulate = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+
+[node name="BackgroundMain" parent="." instance=ExtResource( 2 )]
+
+[node name="LeftLeftGlass" parent="BackgroundMain/BackgroundWallpaper" index="0"]
+position = Vector2( -15.7019, 304.215 )
+
+[node name="LeftRightGlass" parent="BackgroundMain/BackgroundWallpaper" index="1"]
+position = Vector2( 548.468, 309.009 )
+
+[node name="CentreUpperLeftImage" parent="BackgroundMain/BackgroundWallpaper" index="2"]
+margin_left = 1315.11
+margin_top = 177.245
+margin_right = 1615.11
+margin_bottom = 742.245
+
+[node name="CentreUpperRightImage" parent="BackgroundMain/BackgroundWallpaper" index="3"]
+margin_left = 2291.21
+margin_top = 477.517
+margin_right = 2803.21
+margin_bottom = 631.517
+
+[node name="CentreLowerLeftImage" parent="BackgroundMain/BackgroundWallpaper" index="4"]
+margin_left = 1222.78
+margin_top = 658.937
+margin_right = 2022.78
+margin_bottom = 1549.94
+
+[node name="CentreLowerRightImage" parent="BackgroundMain/BackgroundWallpaper" index="5"]
+margin_left = 2295.16
+margin_top = 598.666
+margin_right = 2615.16
+margin_bottom = 982.666
+
+[node name="CentreUpperLeftGlass" parent="BackgroundMain/BackgroundWallpaper" index="6"]
+position = Vector2( 1194.92, 144.654 )
+
+[node name="CentreUpperRightGlass" parent="BackgroundMain/BackgroundWallpaper" index="7"]
+position = Vector2( 2251.06, 148.641 )
+
+[node name="CentreMiddleGlass" parent="BackgroundMain/BackgroundWallpaper" index="8"]
+editor/display_folded = false
+position = Vector2( 1724.23, 390.07 )
+
+[node name="CurrentSequence" parent="BackgroundMain/BackgroundWallpaper/CentreMiddleGlass" index="1"]
+margin_left = 16.9528
+margin_top = 82.6022
+margin_right = 86.9528
+margin_bottom = 95.6022
+
+[node name="CentreLowerLeftGlass" parent="BackgroundMain/BackgroundWallpaper" index="9"]
+position = Vector2( 1117, 581.895 )
+
+[node name="CentreLowerRightGlass" parent="BackgroundMain/BackgroundWallpaper" index="10"]
+position = Vector2( 2249.74, 587.343 )
+
+[node name="RightLeftGlass" parent="BackgroundMain/BackgroundWallpaper" index="11"]
+position = Vector2( 2803.44, 333.369 )
+
+[node name="RightRightGlass" parent="BackgroundMain/BackgroundWallpaper" index="12"]
+position = Vector2( 3274.91, 301.576 )
+
+[node name="BackgroundMainCollisionShape" parent="BackgroundMain" index="1"]
+position = Vector2( 960, 540 )
+scale = Vector2( 1.86939, 1.79214 )
+
+[node name="AnimationGlue" type="Area2D" parent="BackgroundMain"]
+editor/display_folded = true
+
+[node name="AnimationGlue" type="CollisionPolygon2D" parent="BackgroundMain/AnimationGlue"]
+visible = false
+modulate = Color( 0.435294, 0.203922, 0.203922, 1 )
+position = Vector2( 1019.04, 454.928 )
+polygon = PoolVector2Array( -11.2794, -11.6249, -11.0647, 10.4828, 10.1845, 10.6975, 10.1845, -11.4103 )
+
+[node name="Sprite" type="Sprite" parent="BackgroundMain/AnimationGlue"]
+modulate = Color( 0.501961, 0.447059, 0.447059, 0.45098 )
+position = Vector2( 1019.04, 454 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Popups" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BarryPopup" parent="Popups" instance=ExtResource( 4 )]
+
+[node name="JohnPopup" parent="Popups" instance=ExtResource( 5 )]
+
+[node name="PlayerPopup" parent="Popups" instance=ExtResource( 6 )]
+
+[node name="Panel" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 752, 783.158 )
+scale = Vector2( 1, 0.9 )
+
+[node name="Crew" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 550 )
+
+[node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
+editor/display_folded = true
+position = Vector2( 0, -550 )
+
+[node name="CollisionPolygon2D" parent="Crew/JohnConsole" index="1"]
+position = Vector2( 0, 480 )
+polygon = PoolVector2Array( -1.27499, -151.828, 53.841, -131.786, 103.947, -86.6913, 127.329, -13.2033, 135.68, 167.176, 130.669, 212.271, 187.456, 254.026, 275.975, 279.079, 307.709, 332.524, 367.835, 444.427, 387.878, 355.907, 412.93, 334.195, 468.046, 345.886, 481.408, 387.64, 466.376, 427.725, 454.685, 531.276, 459.695, 596.413, 237.561, 598.083, -2.57022, 602.938 )
+
+[node name="BarryConsole" parent="Crew" instance=ExtResource( 9 )]
+editor/display_folded = true
+position = Vector2( 0, -550 )
+
+[node name="CollisionPolygon2D" parent="Crew/BarryConsole" index="1"]
+polygon = PoolVector2Array( 1921.88, 308.684, 1831.66, 350.211, 1798.73, 403.194, 1781.54, 565.007, 1801.59, 623.718, 1780.11, 669.541, 1694.19, 705.34, 1655.53, 703.908, 1636.91, 726.82, 1602.55, 746.867, 1550.99, 789.826, 1548.13, 819.898, 1533.81, 841.377, 1510.9, 827.058, 1469.37, 837.081, 1455.05, 852.833, 1462.21, 904.384, 1436.44, 951.639, 1443.6, 1007.49, 1512.33, 1050.45, 1549.56, 1076.22, 1717, 1085.59, 1924.48, 1083.13 )
+
+[node name="JohnClose" parent="Crew" instance=ExtResource( 10 )]
+editor/display_folded = true
+
+[node name="BarryClose" parent="Crew" instance=ExtResource( 11 )]
+position = Vector2( 2600, 0 )
+
+[node name="Dialogues" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 12 )]
+
+[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 13 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AirlockWarning = SubResource( 1 )
+anims/FadeIn = SubResource( 2 )
+anims/FadeOut = SubResource( 3 )
+
+[node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
+
+[node name="shortSFX" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -14.136
+[connection signal="input_event" from="BackgroundMain/AnimationGlue" to="." method="_on_Area2D_input_event"]
+[connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
+[connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
+[connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
+[connection signal="input_event" from="Crew/JohnConsole" to="." method="_on_JohnConsole_input_event"]
+[connection signal="mouse_entered" from="Crew/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
+[connection signal="mouse_exited" from="Crew/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
+[connection signal="input_event" from="Crew/BarryConsole" to="." method="_on_BarryConsole_input_event"]
+[connection signal="mouse_entered" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
+[connection signal="mouse_exited" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+
+[editable path="BackgroundMain"]
+
+[editable path="Panel"]
+
+[editable path="Crew/JohnConsole"]
+
+[editable path="Crew/BarryConsole"]
+
+[editable path="Crew/JohnClose"]

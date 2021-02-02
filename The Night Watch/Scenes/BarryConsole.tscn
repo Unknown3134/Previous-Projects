@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GFX/console_barry.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BarryAirlock"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryConsoleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionPolygon2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "BarryConsoleFastIn"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryConsoleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 300, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "BarryConsoleSlideIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryConsoleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 500, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "BarryConsoleSlideOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryConsoleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.99299, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ), Vector2( 500, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryConsoleSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
+}
+
+[node name="BarryConsole" type="Area2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BarryConsoleSprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 1921.39, 308.802, 1835.26, 347.762, 1751.97, 482.147, 1773.5, 558.68, 1797.41, 635.213, 1777.85, 673.799, 1687.62, 714.81, 1660.97, 702.507, 1550.24, 788.63, 1527.16, 831.33, 1470.27, 835.792, 1455.91, 872.702, 1460.01, 901.41, 1429.26, 958.825, 1462.58, 1041.8, 1529.55, 1070.5, 1553.46, 1092.02, 1717, 1085.59, 1924.48, 1083.13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BarryAirlock = SubResource( 1 )
+anims/BarryConsoleFastIn = SubResource( 2 )
+anims/BarryConsoleSlideIn = SubResource( 3 )
+anims/BarryConsoleSlideOut = SubResource( 4 )
+anims/BarryConsoleSlowOut = SubResource( 5 )

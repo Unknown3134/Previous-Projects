@@ -1,0 +1,135 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Title.gd" type="Script" id=1]
+[ext_resource path="res://GFX/titleBG.jpg" type="Texture" id=2]
+[ext_resource path="res://GFX/title.png" type="Texture" id=3]
+[ext_resource path="res://GFX/play_game.png" type="Texture" id=4]
+[ext_resource path="res://GFX/about_game.png" type="Texture" id=5]
+[ext_resource path="res://GFX/exit_game.png" type="Texture" id=6]
+[ext_resource path="res://SFX/rollover6.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SFX/click3.ogg" type="AudioStream" id=8]
+[ext_resource path="res://SFX/lightless-dawn-by-kevin-macleod.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/About.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 76.8052, 10.998 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+outline_size = 2
+outline_color = Color( 0.00784314, 0.0588235, 0.47451, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="InputEventAction" id=3]
+action = "\"ui_escape\""
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NightWatch" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Options" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="NewGameArea" type="Area2D" parent="Options"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NewGameCol" type="CollisionShape2D" parent="Options/NewGameArea"]
+visible = false
+position = Vector2( 947.933, 494.173 )
+scale = Vector2( 1.89275, 2.47518 )
+shape = SubResource( 1 )
+
+[node name="NewGameSprite" type="Sprite" parent="Options/NewGameArea"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="AboutGameArea" type="Area2D" parent="Options"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AboutGameCol" type="CollisionShape2D" parent="Options/AboutGameArea"]
+visible = false
+position = Vector2( 945.41, 587.104 )
+scale = Vector2( -2.35356, -1.84273 )
+shape = SubResource( 1 )
+
+[node name="AboutGameSprite" type="Sprite" parent="Options/AboutGameArea"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ExitGameArea" type="Area2D" parent="Options"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ExitGameCol" type="CollisionShape2D" parent="Options/ExitGameArea"]
+visible = false
+position = Vector2( 951.247, 684.763 )
+scale = Vector2( 1.91205, 1.93388 )
+shape = SubResource( 1 )
+
+[node name="ExitGameSprite" type="Sprite" parent="Options/ExitGameArea"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="SFXRollOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="SFXSelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="AboutCtrl" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="Buttons" type="Control" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 312.0
+margin_top = 500.0
+margin_right = 712.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 400, 80 )
+
+[node name="Back" type="Button" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 220.0
+margin_top = 400.0
+margin_right = 620.0
+margin_bottom = 400.0
+custom_fonts/font = SubResource( 2 )
+shortcut = SubResource( 4 )
+text = "Main Menu"
+[connection signal="input_event" from="Options/NewGameArea" to="." method="_on_NewGameArea_input_event"]
+[connection signal="mouse_entered" from="Options/NewGameArea" to="." method="_on_NewGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="Options/NewGameArea" to="." method="_on_NewGameArea_mouse_exited"]
+[connection signal="input_event" from="Options/AboutGameArea" to="." method="_on_AboutGameArea_input_event"]
+[connection signal="mouse_entered" from="Options/AboutGameArea" to="." method="_on_AboutGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="Options/AboutGameArea" to="." method="_on_AboutGameArea_mouse_exited"]
+[connection signal="input_event" from="Options/ExitGameArea" to="." method="_on_ExitGameArea_input_event"]
+[connection signal="mouse_entered" from="Options/ExitGameArea" to="." method="_on_ExitGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="Options/ExitGameArea" to="." method="_on_ExitGameArea_mouse_exited"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]
